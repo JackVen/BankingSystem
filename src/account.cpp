@@ -30,3 +30,17 @@ long Account::getAccountNbr()
 {
     return accountNbr;
 }
+
+void Account::withdraw(float amount)
+{
+    if (amount > getBalance() && getBalance() > 0)
+    {
+        cout<<"Insufficient Balance"<<endl;
+    }
+    else
+    {
+        balance -= amount;
+        cout << "Current Balance: " << balance << endl;
+    }
+}
+

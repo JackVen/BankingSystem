@@ -25,4 +25,5 @@ class Account{
         string getLastName();
         float getBalance();
         long getAccountNbr();
+        void withdraw(float amount);
 };
