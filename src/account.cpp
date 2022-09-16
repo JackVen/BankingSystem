@@ -33,7 +33,7 @@ long Account::getAccountNbr()
 
 void Account::withdraw(float amount)
 {
-    if (amount > getBalance() && getBalance() > 0)
+    if (amount > getBalance())
     {
         cout<<"Insufficient Balance"<<endl;
     }
@@ -43,4 +43,22 @@ void Account::withdraw(float amount)
         cout << "Current Balance: " << balance << endl;
     }
 }
+
+void Account::openAccountFile(string pathToFile)
+{
+    cout<<"Opening account file"<<endl;
+    ifstream accFile(pathToFile);
+    if(accFile.good())
+    {
+        cout<<"Opening account file"<<endl;
+        string accFileText;
+        while(getline(accFile, accFileText))
+        {
+            cout<<accFileText;
+        }
+    }
+    accFile.close();
+}
+
+
 

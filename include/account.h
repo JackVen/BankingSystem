@@ -1,10 +1,10 @@
 #pragma once
 
-#include<iostream>
-#include<fstream>
-#include<cstdlib>
-#include<vector>
-#include<map>
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <vector>
+#include <map>
 #include <string.h>
 
 using namespace std;
@@ -17,6 +17,7 @@ class Account{
         string lastName;
         float balance;
         static long NextAccNbr;
+        
 
     public:
         Account(){};
@@ -26,4 +27,6 @@ class Account{
         float getBalance();
         long getAccountNbr();
         void withdraw(float amount);
+        void openAccountFile(string pathTofile);
+
 };

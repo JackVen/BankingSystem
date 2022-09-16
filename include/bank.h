@@ -3,9 +3,10 @@
 
 class Bank{
     private:
-        int x;
+        map<long, Account> accounts;
     
     public:
-        void openAccount();
-
+        Account openAccount(string fname, string lname, int balance);
+        void withdraw(long accountNumber, int amount);
+        void readAccountFile(string pathToFile);
 };
