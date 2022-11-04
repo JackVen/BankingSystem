@@ -1,6 +1,6 @@
 #include "../include/account.h"
 
-long Account::NextAccNbr=0;
+long Account::NextAccNbr = 0;
 
 Account::Account(string fname, string lname, float balance)
 {
@@ -8,7 +8,7 @@ Account::Account(string fname, string lname, float balance)
     accountNbr = NextAccNbr;
     firstName = fname;
     lastName = lname;
-    this->balance= balance;
+    this->balance = balance;
 }
 
 string Account::getFirstName()
@@ -35,7 +35,7 @@ void Account::withdraw(float amount)
 {
     if (amount > getBalance())
     {
-        cout<<"Insufficient Balance"<<endl;
+        cout << "Insufficient Balance" << endl;
     }
     else
     {
@@ -44,21 +44,31 @@ void Account::withdraw(float amount)
     }
 }
 
-void Account::openAccountFile(string pathToFile)
+void Account::readAccountFile(string pathToFile)
 {
-    cout<<"Opening account file"<<endl;
+    cout << "Opening account file" << endl;
     ifstream accFile(pathToFile);
-    if(accFile.good())
+    if (accFile.good())
     {
-        cout<<"Opening account file"<<endl;
         string accFileText;
-        while(getline(accFile, accFileText))
+        while (getline(accFile, accFileText))
         {
-            cout<<accFileText;
+            cout << accFileText;
         }
     }
     accFile.close();
 }
 
-
-
+void Account::writeAccountFile(string pathToFile)
+{
+    cout<<"Writing to file"<<endl;
+    ofstream accFile(pathToFile);
+    if(accFile.is_open())
+    {
+        accFile<<getFirstName()<<endl;
+        accFile<<getLastName()<<endl;
+        accFile<<getBalance()<<endl;
+        accFile.close();
+    }
+}
+u

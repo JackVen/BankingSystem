@@ -27,6 +27,7 @@ class Account{
         float getBalance();
         long getAccountNbr();
         void withdraw(float amount);
-        void openAccountFile(string pathTofile);
+        void readAccountFile(string pathTofile);
+        void writeAccountFile(string pathTofile);
 
 };
