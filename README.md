@@ -2,7 +2,7 @@
 A simple banking system project.
 
 ## Description
-A system that emulates the basic functions on a banking system, such as:
+A program that emulates the basic functions on a banking system, such as:
     * Adding an account
     * Removing an account
     * Withdrawal
@@ -11,6 +11,8 @@ A system that emulates the basic functions on a banking system, such as:
     * Show all accounts
 
 ## Usage
+   Education purpose
 ## License
-
+   None
 ## Project status
+   In progress
