@@ -29,5 +29,7 @@ class Account{
         void withdraw(float amount);
         void readAccountFile(string pathTofile);
         void writeAccountFile(string pathTofile);
+        friend ofstream &operator<<(ofstream &ofs, Account &acc);
+        friend ostream &operator<<(ostream&os, Account &acc);
 
 };

@@ -46,7 +46,6 @@ void Account::withdraw(float amount)
 
 void Account::readAccountFile(string pathToFile)
 {
-    cout << "Opening account file" << endl;
     ifstream accFile(pathToFile);
     if (accFile.good())
     {
@@ -72,3 +71,17 @@ void Account::writeAccountFile(string pathToFile)
         accFile.close();
     }
 }
+
+ofstream &operator<<(ofstream &ofs, Account & acc)
+{
+    ofs<<acc.balance<<endl;
+    return ofs;
+}
+
+ostream & operator<<(ostream &os,Account &acc)
+{
+ os<<"Balance:"<<acc.getBalance()<<endl;
+ return os;
+}
+
+
