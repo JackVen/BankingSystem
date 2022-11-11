@@ -61,14 +61,14 @@ void Account::readAccountFile(string pathToFile)
 
 void Account::writeAccountFile(string pathToFile)
 {
-    cout<<"Writing to file"<<endl;
-    ofstream accFile(pathToFile);
+    ofstream accFile;
+    accFile.open(pathToFile, std::ios::app);
     if(accFile.is_open())
     {
-        accFile<<getFirstName()<<endl;
-        accFile<<getLastName()<<endl;
-        accFile<<getBalance()<<endl;
+        accFile<<"First Name: " << getFirstName()<<endl;
+        accFile<<"Last Name: "<< getLastName()<<endl;
+        accFile<<"Balance: "<<getBalance()<<endl;
+        accFile<<"Account: "<< getAccountNbr()<<endl;
         accFile.close();
     }
 }
-u

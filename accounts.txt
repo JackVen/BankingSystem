@@ -1,3 +1,0 @@
-firstName
-secondName
-500
