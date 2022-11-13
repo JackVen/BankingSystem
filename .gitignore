@@ -36,3 +36,6 @@
 
 #vs code settings
 /.vscode
+
+# pdf files
+*.pdf
