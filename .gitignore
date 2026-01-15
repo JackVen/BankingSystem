@@ -5,8 +5,11 @@
 *.slo
 *.lo
 *.o
+*.out
+*.exe
 *.obj
 /build
+/src/bank
 
 # Precompiled Headers
 *.gch
