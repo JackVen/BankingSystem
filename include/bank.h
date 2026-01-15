@@ -9,6 +9,6 @@ private:
 public:
     Account openAccount(string fname, string lname, int balance);
     Account balanceEnquiry(long accNumber);
-    void withdraw(long accountNumber, int amount);
+    void withdraw(long accNumber, int amount);
     void readAccountFile(string pathToFile);
 };

@@ -6,6 +6,7 @@
 #include <vector>
 #include <map>
 #include <string>
+#include <limits>
 
 using namespace std;
 
@@ -30,10 +31,18 @@ Account Bank::openAccount(string fname, string lname, int balance)
     return acc;
 }
 
-void Bank::withdraw(long accountNumber, int amount)
+void Bank::withdraw(long accNumber, int amount)
 {
     // Search for the account number
-    // if found use the withdraw function from the account class
+    auto it = accounts.find(accNumber);
+    if (it == accounts.end()){
+        cout<<"Account doesn't exist"<<endl;
+    }
+    else{
+        // if found use the withdraw function from the account class
+        it->second.withdraw(amount);
+    }
+
 }
 
 Account Bank::balanceEnquiry(long accNumber)
@@ -86,13 +95,17 @@ int main(int argc, char ** argv){
                 break;
 
             case char(KeyPressed_t::BALANCE_ENQUIERY):
-                    cout<<""<<endl;
-                    cout<<"--Balance Information--"<<endl;
-                    cout<<"Enter your account number:";
-                    cin>>accNumber;
+                    cout << "\n--Balance Information--\n";
+                    cout << "Enter your account number: ";
+                    cin >> accNumber;
+
                     acc = bank.balanceEnquiry(accNumber);
-                    cout<<acc;
-                break;
+                    cout << acc << "\n";
+
+                    cout << "Press Enter to continue...";
+                    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    cin.get();
+                    break;
 
             case char(KeyPressed_t::DEPOSIT):
                     cout<<""<<endl;
@@ -124,6 +137,9 @@ int main(int argc, char ** argv){
                     cout<<"--Account details--"<<endl;
                     cout<<"Enter your account number:";
                     cin>>accNumber;
+                    cout << "Press Enter to continue...";
+                    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    cin.get();
                 break;
 
             default:
