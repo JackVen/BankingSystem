@@ -1,4 +1,0 @@
-First Name: Jack
-Last Name: Venturi
-Balance: 300
-Account: 1
