@@ -43,5 +43,8 @@
 # pdf files
 *.pdf
 
-# text files
-*.txt   
+# Cmake build folder
+/build-cmake/
+
+# json
+*.ndjson
